@@ -1,0 +1,64 @@
+#include <stdio.h>
+
+/*
+int main ()
+{
+    int base_de_donnée[10];
+    
+    scanf ("%d", &base_de_donnée[3]);
+
+
+    if (base_de_donnée[3] != 42)
+    {
+        printf("Le mot de passe est erroné");
+    }
+    else
+    {
+        printf("Mot de passe correct");
+    }
+    
+   
+
+    return(0);
+
+}
+*/
+
+
+int hashage (int a)
+{
+return a*7;
+}
+
+
+int main ()
+{
+    int entrée_mot_de_passe[10];
+    int base_de_donnée[10];
+    base_de_donnée[3] = 42;
+    
+
+    scanf ("%d", &entrée_mot_de_passe[3]);
+
+    int résultat_hashage = hashage(entrée_mot_de_passe[3]);
+    printf("Résultat : %d\n", résultat_hashage);
+    
+    
+
+    // entrée_mot_de_passe[3] =  entrée_mot_de_passe[3] * 7; 
+    // pourquoi ça marche ? Pas de pointeur pourtant ma variable est modifié même après la fin de la fonction ?
+
+   
+
+   // if (entrée_mot_de_passe[3] != base_de_donnée[3])
+   if (résultat_hashage != base_de_donnée[3])
+    {
+        printf("Le mot de passe est erroné");
+    }
+    else
+    {
+        printf("Mot de passe correct");
+    }
+    
+    return(0);
+}
